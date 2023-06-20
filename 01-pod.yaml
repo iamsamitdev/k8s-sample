@@ -1,0 +1,32 @@
+# Create Pod Linux 2 container busybox , alpine
+apiVersion: v1
+kind: Pod
+metadata:
+  name: linux
+  namespace: default
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      command:
+        - sleep
+        - "3600"
+      resources:
+        limits:
+          memory: "10Mi"
+          cpu: "100m"
+        requests:
+          memory: "8Mi"
+          cpu: "80m"
+    - name: alpine
+      image: alpine
+      command:
+        - sleep
+        - "3600"
+      resources:
+        limits:
+          memory: "10Mi"
+          cpu: "100m"
+        requests:
+          memory: "8Mi"
+          cpu: "80m"
